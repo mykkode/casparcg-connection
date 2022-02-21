@@ -1515,8 +1515,11 @@ export class CasparCG extends EventEmitter implements ICasparCGConnection, Conne
 	 * @todo	implement
 	 * @todo	document
 	 */
-	public call(channel: number, layer?: number): Promise<IAMCPCommand> {
-		return this.do(new AMCP.CallCommand({ channel: channel, layer: layer }))
+	public call(channel: number, layer: number, param: Enum.CallParam, value: number): Promise<IAMCPCommand> {
+		let params: Param = { channel: channel, layer: layer }
+		params[param.toString().toLowerCase()] = value
+
+		return this.do(new AMCP.CallCommand(params))
 	}
 
 	/**

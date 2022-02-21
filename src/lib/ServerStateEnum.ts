@@ -176,6 +176,19 @@ export namespace Enum {
 	 *
 	 *
 	 */
+	export class CallParam extends AbstractEnum {
+		static readonly SEEK = new CallParam('SEEK')
+		static readonly LOOP = new CallParam('LOOP')
+		static readonly IN = new CallParam('IN')
+		static readonly START = new CallParam('START')
+		static readonly OUT = new CallParam('OUT')
+		static readonly LENGTH = new CallParam('LENGTH')
+	}
+
+	/**
+	 *
+	 *
+	 */
 	export class Chroma extends AbstractEnum {
 		static readonly NONE = new Chroma('NONE')
 		static readonly GREEN = new Chroma('GREEN')
